@@ -1,4 +1,5 @@
 from flask import Flask
+from sqlalchemy import *
 import locale
 locale.setlocale( locale.LC_ALL, '' )
 app = Flask(__name__, static_folder='static', static_url_path='')
@@ -96,6 +97,9 @@ def index():
 	return page
 
 if __name__ == '__main__':
-	#going to be loaded from a mongodb thingy
+	db = create_engine('postgres://foodportal:analbuttsecks@localhost/foodportal')
+	db.echo = False
+	metadata = BoundMetaData(db)
+	events = Table('events', metadata, autoload=True)
 	event = {'name':'Chinese Food', 'dueTime':'7:00', 'foodEta':'7:30', 'items':{'entrees':{'chicken':6.25, 'pork':4.50, 'chickenandpork':12.76}, 'sides':{'rice':2.00, 'soup':1.75}}}
 	app.run(host='0.0.0.0', debug=True)
