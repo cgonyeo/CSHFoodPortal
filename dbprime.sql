@@ -28,7 +28,8 @@ create table "public"."items"(
 "uid" TEXT PRIMARY KEY,
 "cost" MONEY NOT NULL,
 "section" TEXT NOT NULL,
-"is_current" BOOL NOT NULL
+"is_current" BOOL NOT NULL,
+"event" TEXT NOT NULL
 )
 WITHOUT OIDS;
 
@@ -66,6 +67,7 @@ COMMENT ON COLUMN "items"."uid" is 'uid of the item';
 COMMENT ON COLUMN "items"."cost" is 'The cost of this item';
 COMMENT ON COLUMN "items"."section" is 'The section of the menu this item belongs to';
 COMMENT ON COLUMN "items"."is_current" is 'whether or not this item is currently for sale';
+COMMENT ON COLUMN "items"."event" is 'the name of the event this item belongs to';
 COMMIT;
 
 BEGIN;
