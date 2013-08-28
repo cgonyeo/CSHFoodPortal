@@ -1,30 +1,29 @@
-name,uid,cost,section,is_current,event
-Pork Egg Roll,1,1,Appetizers,yes,chinese
-Shrimp Egg Roll,2,1.2,Appetizers,yes,chinese
-Vegetable Spring Roll (2),3,1.95,Appetizers,yes,chinese
-Fresh Roll (Shrimp) (2),4,2.75,Appetizers,yes,chinese
-Vegetable Fresh Roll (2),5,2.25,Appetizers,yes,chinese
-Fried Wonton (12),6,3.25,Appetizers,yes,chinese
-Fried Chicken Wings,7,4.25,Appetizers,yes,chinese
-Buffalo Chicken Wings (12),8,5.95,Appetizers,yes,chinese
-Fried Jumbo Shrimp,9,4.95,Appetizers,yes,chinese
-Chicken or Beef Teriyaki Sticks (4),10,4.25,Appetizers,yes,chinese
-Fried or Steamed Vegetable Dumplings (8),11,4.75,Appetizers,yes,chinese
-Fried or Steamed Dumplings (8),12,2.95,Appetizers,yes,chinese
-Shrimp Toast (4),13,3.95,Appetizers,yes,chinese
-Fried Donuts (10),14,2.95,Appetizers,yes,chinese
-Golden Chicken Fingers,15,5.95,Appetizers,yes,chinese
-B-B-Q Share Ribs,16,4.95,Appetizers,yes,chinese
-Boneless Spare Ribs,17,4.95,Appetizers,yes,chinese
-Fried Crab Ragoon,18,3.95,Appetizers,yes,chinese
-Wonton Soup,20,2.45,Soups,yes,chinese
-Egg Drop Soup,21,2.45,Soups,yes,chinese
-Wonton Egg Drop Soup,22,2.95,Soups,yes,chinese
-Chicken Noodle Soup,23,2.95,Soups,yes,chinese
-Chicken Rice Soup,24,2.75,Soups,yes,chinese
-Hot and Sour Soup,25,2.95,Soups,yes,chinese
-Vegetable Tofu Soup,26,3.5,Soups,yes,chinese
-House Special Soup,27,5.25,Soups,yes,chinese
-Seafood Soup,28,6.95,Soups,yes,chinese
-Chicken Corn Soup,29,3.95,Soups,yes,chinese
-Subgum Wonton Soup,30,5.95,Soups,yes,chinese
+name,cost,section,event
+Pork Egg Roll,1,Appetizers,chinese
+Shrimp Egg Roll,1.2,Appetizers,chinese
+Vegetable Spring Roll (2),1.95,Appetizers,chinese
+Fresh Roll (Shrimp) (2),2.75,Appetizers,chinese
+Vegetable Fresh Roll (2),2.25,Appetizers,chinese
+Fried Wonton (12),3.25,Appetizers,chinese
+Fried Chicken Wings,4.25,Appetizers,chinese
+Buffalo Chicken Wings (12),5.95,Appetizers,chinese
+Fried Jumbo Shrimp,4.95,Appetizers,chinese
+Chicken or Beef Teriyaki Sticks (4),4.25,Appetizers,chinese
+Fried or Steamed Vegetable Dumplings (8),4.75,Appetizers,chinese
+Fried or Steamed Dumplings (8),2.95,Appetizers,chinese
+Shrimp Toast (4),3.95,Appetizers,chinese
+Fried Donuts (10),2.95,Appetizers,chinese
+Golden Chicken Fingers,5.95,Appetizers,chinese
+B-B-Q Share Ribs,4.95,Appetizers,chinese
+Boneless Spare Ribs,4.95,Appetizers,chinese
+Fried Crab Ragoon,3.95,Appetizers,chinese
+Wonton Soup,2.45,Soups,chinese
+Egg Drop Soup,2.45,Soups,chinese
+Wonton Egg Drop Soup,2.95,Soups,chinese
+Chicken Noodle Soup,2.95,Soups,chinese
+Chicken Rice Soup,2.75,Soups,chinese
+Hot and Sour Soup,2.95,Soups,chinese
+Vegetable Tofu Soup,3.5,Soups,chinese
+House Special Soup,5.25,Soups,chinese
+Seafood Soup,6.95,Soups,chinese
+Chicken Corn Soup,3.95,Soups,chinese

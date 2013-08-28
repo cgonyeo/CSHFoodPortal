@@ -1,10 +1,16 @@
+import csv
+import random
+import locale
 from sqlalchemy import create_engine, Column, Integer, String, Float, Boolean
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
-db = create_engine('postgres://foodportal:analbuttsecks@localhost/foodportal', encoding='latin1', echo=True)
+locale.setlocale(locale.LC_ALL, '')
+
+db = create_engine('postgres://foodportal:analbuttsecks@localhost/foodportal', encoding='latin1', echo=False)
 Session = sessionmaker(bind=db)
 Base = declarative_base()
+session = Session()
 
 class Item(Base):
 	__tablename__ = 'items'
@@ -25,12 +31,41 @@ class Item(Base):
 		self.event = event
 
 	def __repr__(self):
-		return "<Item ('%s', '%i', '%f', '%s', '%i', '%s')>"
+		return "<Item ('%s', '%i', '%s', '%s', '%i', '%s')>" % (self.name, self.uid, self.cost, self.section, self.is_current, self.event)
 
-chicken = Item('chicken', 001, 1.0, 'entree', 'chinese')
 
-session = Session()
+items = session.query(Item).from_statement("SELECT * FROM items").all()
+highestuid = 0
+for item in items:
+	if item.uid > highestuid:
+		highestuid = int(item.uid)
 
-session.add(chicken)
+with open('temp.csv', 'r') as csvfile:
+	reader = csv.reader(csvfile)
+	rows = []
+	for row in reader:
+		rows.append(row)
+	firstRow = True
+	for row in rows:
+		if firstRow:
+			firstRow = False
+		else:
+			matchingItem = None
+			for item in items:
+				if item.name == row[0]:
+					matchingItem = item
+			if matchingItem == None or matchingItem.cost != locale.currency(float(row[1]), grouping=True) or matchingItem.section != row[2] or matchingItem.event != row[3]:
+				if matchingItem != None:
+					matchingItem.is_current = False
+				highestuid += 1
+				session.add(Item(row[0], highestuid, float(row[1]), row[2], row[3]))
+
+	for item in items:
+		matchingItem = False
+		for row in rows:
+			if item.name == row[0]:
+				matchingItem = True
+		if not matchingItem:
+			item.is_current = False
 
 session.commit()
